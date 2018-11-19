@@ -1,6 +1,7 @@
 
 package br.com.controleAnimais;
 import br.com.controleAnimais.Docente;
+import br.com.controleAnimais.Docente;
 
 public class Protocolo {
 	private int id_protocolo;
