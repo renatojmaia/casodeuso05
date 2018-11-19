@@ -1,3 +1,4 @@
+
 package br.com.controleAnimais;
 import br.com.controleAnimais.Docente;
 
@@ -14,23 +15,44 @@ public class Protocolo {
 	private int parecerFinal;
 	
 	
-	public Protocolo() {
-		
-	}
 	
 
-	public Protocolo(String dataInicio, String dataTermino, String resumoSimples,
-			String resumoProtocolo, String justificativa, int parecerFinal   ) {
-		this.setDataInicio(dataInicio);
-		this.setDataTermino(dataTermino);
-		this.setResumoSimples(resumoSimples);
-		this.setResumoProtocolo(resumoProtocolo);
-		this.setJustificativa(justificativa);
-		this.setParecerFinal(parecerFinal);
+	
+	public Protocolo(int id_protocolo, Docente docente, int statusProtocolo, String dataInicio, String dataTermino,
+			String resumoSimples, String resumoProtocolo, String justificativa, int parecerFinal) {
+		super();
+		this.id_protocolo = id_protocolo;
+		this.docente = docente;
+		this.statusProtocolo = statusProtocolo;
+		this.dataInicio = dataInicio;
+		this.dataTermino = dataTermino;
+		this.resumoSimples = resumoSimples;
+		this.resumoProtocolo = resumoProtocolo;
+		this.justificativa = justificativa;
+		this.parecerFinal = parecerFinal;
 	}
-	
-	
-	
+
+	public Protocolo(Docente docente, int statusProtocolo, String dataInicio, String dataTermino, String resumoSimples,
+			String resumoProtocolo, String justificativa, int parecerFinal) {
+		super();
+		this.docente = docente;
+		this.statusProtocolo = statusProtocolo;
+		this.dataInicio = dataInicio;
+		this.dataTermino = dataTermino;
+		this.resumoSimples = resumoSimples;
+		this.resumoProtocolo = resumoProtocolo;
+		this.justificativa = justificativa;
+		this.parecerFinal = parecerFinal;
+	}
+
+	public Docente getDocente() {
+		return docente;
+	}
+
+	public void setDocente(Docente docente) {
+		this.docente = docente;
+	}
+
 	public void setJustificativa(String justificativa) {
 		this.justificativa = justificativa;
 	}
