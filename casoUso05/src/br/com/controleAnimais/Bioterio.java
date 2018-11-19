@@ -13,6 +13,7 @@ public class Bioterio {
 		this.curso = curso;
 	}
 
+	
 	public Bioterio(int id_bioterio, String nome, String local, String curso) {
 		super();
 		this.id_bioterio = id_bioterio;
