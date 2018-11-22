@@ -7,7 +7,7 @@
 -- Versão do servidor: 5.7.17
 -- PHP Version: 5.6.30
 
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO"; 
 SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
