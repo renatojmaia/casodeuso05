@@ -20,6 +20,7 @@
         </header>
 
         <content>
+         <form action="Controller" method="POST">
             <div class="container">
                 <div class="grid-12 descr">
                     <h2>Emição de Protocolo</h2>
@@ -28,16 +29,15 @@
             
             <div class="container">
                 <div class="grid-6 form">
-                    <form>
+                   
                         <label>Justificativa:</label></br>
-                        <textarea></textarea>
+                        <textarea name="justificativa"></textarea>
                         <label>Resumo inglês:</label></br>
-                        <textarea></textarea>
+                        <textarea name="resumo-ingles"></textarea>
                         <div>
                             <label>Quantidade de animais:</label></br>
                             <input type="number" name="quantidade-animal">
                        </div>
-                    </form>
                 </div>
 
                 <div class="grid-6 form">
@@ -58,7 +58,7 @@
                         </div>
                         <div>
                             <label>Proveniência:</label></br>
-                            <select>
+                            <select name="proveniencia">
                                 <option>Bioterio A</option>
                                 <option>Bioterio B</option>
                                 <option>Bioterio C</option>
@@ -69,9 +69,11 @@
 
             <div class="container">
                 <div class="grid-12">
-                    <button class="bnt">Emitir protocolo</button>
+                	<input type="hidder" name="acao" value="cadastroProtocolo" />
+                    <input type="submit" class="bnt" value="Emitir protocolo">
                 </div>
             </div>
+            </form>
         </content>
 
 
