@@ -9,13 +9,17 @@ import javax.sql.DataSource;
 
 import br.com.controleAnimais.Protocolo;
 
+//Classe de Persistencia Protocolo
 public class ProtocoloDAO {
+	//Atributos
 	private DataSource ds;
 	
+	//Construtor
 	public ProtocoloDAO(DataSource ds){
 		this.ds = ds;
 	}
 	
+	//Metodo cadastar protocolo
 	public boolean cadastrarProtocolo(Protocolo p) {
 		Connection c;
 		PreparedStatement p1;

@@ -16,7 +16,7 @@ import br.com.controleAnimais.Protocolo;
 /**
  * Servlet implementation class Controller
  */
-@WebServlet("/Controller")
+@WebServlet("/CadastroProtocolo")
 public class Controller extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	@Resource(name="Protocolo")
@@ -47,14 +47,14 @@ public class Controller extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String justificativa = request.getParameter("justificativa");
 		
-		Protocolo p = new Protocolo(dataInicio, docente, justificativa);
+		//Protocolo p = new Protocolo(dataInicio, docente, justificativa);
 		
 		  
-		if(pro.cadastrarProtocolo(p)) {
-			request.getRequestDispatcher("sucesso.html").forward(request, response);
-		}else{
-			request.getRequestDispatcher("cadastrar.html").forward(request, response);
-		}
+		//if(pro.cadastrarProtocolo(p)) {
+		//	request.getRequestDispatcher("sucesso.html").forward(request, response);
+		//}else{
+		//	request.getRequestDispatcher("cadastrar.html").forward(request, response);
+		//}
 		
 		
 	}

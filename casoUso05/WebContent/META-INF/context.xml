@@ -1,9 +1,9 @@
 <Context>
 
-  <Resource name="jdbc/web-aluno" 
+  <Resource name="Protocolo" 
   auth="Container" type="javax.sql.DataSource"
                maxActive="20" maxIdle="5" maxWait="10000"
-               username="root" password="" 
+               username="root" password="vertrigo" 
                driverClassName="com.mysql.cj.jdbc.Driver"
-               url="jdbc:mysql://localhost:3306/alunos?serverTimezone=UTC"/>
+               url="jdbc:mysql://localhost:3306/Protcolo?serverTimezone=UTC"/>
 </Context>
