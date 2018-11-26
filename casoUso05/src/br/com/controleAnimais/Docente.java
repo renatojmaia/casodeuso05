@@ -1,6 +1,6 @@
 package br.com.controleAnimais;
 
-//Classe Docente
+//Classe Docente   
 public class Docente {
 	
 	//Declaração dos atributos

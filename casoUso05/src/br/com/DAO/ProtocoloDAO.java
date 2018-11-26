@@ -9,7 +9,7 @@ import javax.sql.DataSource;
 
 import br.com.controleAnimais.Protocolo;
 
-//Classe de Persistencia Protocolo
+//Classe de Persistencia Protocolo  
 public class ProtocoloDAO {
 	//Atributos
 	private DataSource ds;

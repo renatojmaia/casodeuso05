@@ -1,7 +1,7 @@
 package br.com.controleAnimais;
 import br.com.controleAnimais.Docente;
 
-	//Classe Parecer
+	//Classe Parecer   
 	public class Parecer {
 		
 		//Atributos

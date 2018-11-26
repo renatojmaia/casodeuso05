@@ -3,7 +3,7 @@ package br.com.controleAnimais;
 import br.com.controleAnimais.Docente;
 import br.com.controleAnimais.Docente;
 
-//Classe Cadastro de Protocolo
+//Classe Cadastro de Protocolo  
 public class Protocolo {
 		//Atributos
 		private int id_protocolo;

@@ -3,7 +3,7 @@ package br.com.controleAnimais;
 //Classe Animal
 public class Animal {
 	
-	//Declaração dos atributos
+	//Declaração dos atributos   
 	private int id_animal;
 	private String especie;
 	private String bioterio;

@@ -1,7 +1,7 @@
 package br.com.controleAnimais;
 
 
-//Classes Detalhe Protocolo
+//Classes Detalhe Protocolo  
 public class detalheProtcolo {
 	
 	//Declaração dos Atributos
