@@ -46,12 +46,19 @@ public class Controller extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String justificativa = request.getParameter("justificativa");
+		String resumoIngles = request.getParameter("resumo-ingles");
+		int qtdAnimal = Integer.parseInt(request.getParameter("quantidade-animal"));
+		String resumoPt= request.getParameter("resumo-pt");
+		String dataInicio = request.getParameter("data-inicio");
+		String dataTermino = request.getParameter("data-termino");
+		String bioterio = request.getParameter("proveniencia");
+		String especie = request.getParameter("especie");
 		
-		Protocolo p = new Protocolo(dataInicio, docente, justificativa);
+		Protocolo p = new Protocolo(dataInicio, dataTermino, resumoIngles, resumoPt, justificativa, especie, qtdAnimal, bioterio);
 		
 		  
 		if(pro.cadastrarProtocolo(p)) {
-			request.getRequestDispatcher("sucesso.html").forward(request, response);
+			request.getRequestDispatcher("cadastroSucesso.html").forward(request, response);
 		}else{
 			request.getRequestDispatcher("cadastrar.html").forward(request, response);
 		}

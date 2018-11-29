@@ -7,52 +7,35 @@ import br.com.controleAnimais.Docente;
 public class Protocolo {
 		//Atributos
 		private int id_protocolo;
-		private  Docente docente;
-		private int id_parecer;
-		private int statusProtocolo;
 		private String dataInicio;
 		private String dataTermino;
-		private String resumoSimples;
-		private String resumoProtocolo;
+		private String resumoIngles;
+		private String resumoPortugues;
 		private String justificativa;
-		private int parecerFinal;
+		private String especie;
+		private int qtdAnimal;
+		private String bioterio;
+
 	
+
 	//Construtor parametrizado superClasse
-	public Protocolo(int id_protocolo, Docente docente, int statusProtocolo, String dataInicio, String dataTermino,
-			String resumoSimples, String resumoProtocolo, String justificativa, int parecerFinal) {
+	public Protocolo(String dataInicio, String dataTermino, String resumoIngles,
+			String resumoPortugues, String justificativa, String especie, int qtdAnimal, String bioterio) {
 		super();
 		this.id_protocolo = id_protocolo;
-		this.docente = docente;
-		this.statusProtocolo = statusProtocolo;
 		this.dataInicio = dataInicio;
 		this.dataTermino = dataTermino;
-		this.resumoSimples = resumoSimples;
-		this.resumoProtocolo = resumoProtocolo;
+		this.resumoIngles = resumoIngles;
+		this.resumoPortugues = resumoPortugues;
 		this.justificativa = justificativa;
-		this.parecerFinal = parecerFinal;
+		this.especie = especie;
+		this.qtdAnimal = qtdAnimal;
+		this.bioterio = bioterio;
 	}
-	//construtor Parametrizado
-	public Protocolo(Docente docente, int statusProtocolo, String dataInicio, String dataTermino, String resumoSimples,
-			String resumoProtocolo, String justificativa, int parecerFinal) {
-		super();
-		this.docente = docente;
-		this.statusProtocolo = statusProtocolo;
-		this.dataInicio = dataInicio;
-		this.dataTermino = dataTermino;
-		this.resumoSimples = resumoSimples;
-		this.resumoProtocolo = resumoProtocolo;
-		this.justificativa = justificativa;
-		this.parecerFinal = parecerFinal;
-	}
+	
 	//Métodos docente
 	//GET 
-	public Docente getDocente() {
-		return docente;
-	}
-	//SET
-	public void setDocente(Docente docente) {
-		this.docente = docente;
-	}
+
 	//Métodos Justificativa 
 	//GET
 	public String getJustificativa() {
@@ -64,42 +47,36 @@ public class Protocolo {
 	}
 	//Métodos Parecer Final
 	//GET
-	public int getParecerFinal() {
-		return parecerFinal;
-	}
-	//SET
-	public void setParecerFinal(int parecerFinal) {
-		this.parecerFinal = parecerFinal;
-	}
+
 	//Metodos Resumo Protocolo
 	//GET
-	public String getResumoProtocolo() {
-		return resumoProtocolo;
-	}
-	//SET
-	public void setResumoProtocolo(String resumoProtocolo) {
-		this.resumoProtocolo = resumoProtocolo;
-	}
-	
-	//Metodos Resumo Simples
-	//GET
-		public String getResumoSimples() {
-			return resumoSimples;
-		}	
-	//SET
-	public void setResumoSimples(String resumoSimples) {
-		this.resumoSimples = resumoSimples;
+	public String getResumoIngles() {
+		return resumoIngles;
+	}public String getResumoPortugues() {
+		return resumoPortugues;
+	}public void setResumoIngles(String resumoIngles) {
+		this.resumoIngles = resumoIngles;
+	}public void setResumoPortugues(String resumoPortugues) {
+		this.resumoPortugues = resumoPortugues;
 	}
 	
 	//Métodos StatusProtocolo
 	//GET
-	public int getStatusProtocolo() {
-		return statusProtocolo;
-	}
-	//SET
-	public void setStatusProtocolo(int statusProtocolo) {
-		this.statusProtocolo = statusProtocolo;
-	}
+public String getBioterio() {
+	return bioterio;
+}public int getQtdAnimal() {
+	return qtdAnimal;
+}public void setBioterio(String bioterio) {
+	this.bioterio = bioterio;
+}public void setEspecie(String especie) {
+	this.especie = especie;
+}public void setQtdAnimal(int qtdAnimal) {
+	this.qtdAnimal = qtdAnimal;
+}public String getEspecie() {
+	return especie;
+}public int getId_protocolo() {
+	return id_protocolo;
+}
 	
 	//Métodos DataInicio
 	//GET
