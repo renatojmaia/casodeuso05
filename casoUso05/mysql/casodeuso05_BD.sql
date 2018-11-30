@@ -1,9 +1,9 @@
 -- phpMyAdmin SQL Dump
 -- version 4.7.0
 -- https://www.phpmyadmin.net/
--- RenatoMaia
+--
 -- Host: localhost
--- Generation Time: 25-Nov-2018 às 22:24
+-- Generation Time: 30-Nov-2018 às 11:07
 -- Versão do servidor: 5.7.17
 -- PHP Version: 5.6.30
 
@@ -76,6 +76,13 @@ CREATE TABLE `docente` (
   `funcao` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Extraindo dados da tabela `docente`
+--
+
+INSERT INTO `docente` (`id_docente`, `nome`, `dataNasc`, `email`, `funcao`) VALUES
+(1, 'Administrador', '1998-11-12', 'admin@localhost', 'Presidente');
+
 -- --------------------------------------------------------
 
 --
@@ -97,16 +104,32 @@ CREATE TABLE `parecer` (
 
 CREATE TABLE `protocolo` (
   `id_protocolo` int(11) NOT NULL,
-  `id_docente` int(11) NOT NULL,
-  `id_parecer` int(11) NOT NULL,
-  `statusProtocolo` int(11) NOT NULL,
   `justificativa` text NOT NULL,
   `resumoPortugues` text NOT NULL,
   `resumoIngles` text NOT NULL,
   `dataInicio` date NOT NULL,
   `dataTermino` date NOT NULL,
-  `parecerFinal` int(11) NOT NULL
+  `especie` varchar(255) NOT NULL,
+  `qtdAnimal` int(11) NOT NULL,
+  `bioterio` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Extraindo dados da tabela `protocolo`
+--
+
+INSERT INTO `protocolo` (`id_protocolo`, `justificativa`, `resumoPortugues`, `resumoIngles`, `dataInicio`, `dataTermino`, `especie`, `qtdAnimal`, `bioterio`) VALUES
+(1, 'teste', 'TESTE', 'teste', '1992-11-12', '1998-11-12', 'TESTE', 6, 'Bioterio A'),
+(2, 'teste', 'TESTE', 'teste', '1992-11-12', '1998-11-12', 'TESTE', 6, 'Bioterio A'),
+(3, 'teste', 'TESTE', 'teste', '1992-11-12', '1998-11-12', 'TESTE', 6, 'Bioterio A'),
+(4, 'testeteste', 'testetesz', 'teste', '1998-12-11', '1998-12-11', 'teste', 1, 'Bioterio A'),
+(5, 'testeteste', 'testetesz', 'teste', '1998-12-11', '1998-12-11', 'teste', 1, 'Bioterio A'),
+(6, 'testeteste', 'testetesz', 'teste', '1998-12-11', '1998-12-11', 'teste', 1, 'Bioterio A'),
+(7, 'LKKLJK', 'JKH', 'HKJH', '1998-11-12', '0998-11-12', 'SEMPRE', 3, 'Bioterio A'),
+(8, 'JLKKLKL', 'KJ', 'K', '1998-11-11', '1998-11-11', 'SEMPRE', 6, 'Bioterio A'),
+(9, 'LKKLJK', 'JKH', 'HKJH', '1998-11-12', '0998-11-12', 'SEMPRE', 3, 'Bioterio A'),
+(10, 'lj', 'nm', 'kkkjjkkj', '1998-11-12', '1998-11-12', 'sempre', 7, 'Bioterio A'),
+(11, 'jijkj', 'jj', 'jkjk', '1998-11-12', '1998-11-12', 'sempre', 16, 'Bioterio A');
 
 -- --------------------------------------------------------
 
@@ -160,10 +183,7 @@ ALTER TABLE `parecer`
 -- Indexes for table `protocolo`
 --
 ALTER TABLE `protocolo`
-  ADD PRIMARY KEY (`id_protocolo`),
-  ADD KEY `docente` (`id_docente`),
-  ADD KEY `parecer` (`id_parecer`),
-  ADD KEY `FK_protocolo_status` (`statusProtocolo`);
+  ADD PRIMARY KEY (`id_protocolo`);
 
 --
 -- Indexes for table `status`
@@ -189,7 +209,7 @@ ALTER TABLE `bioterio`
 -- AUTO_INCREMENT for table `docente`
 --
 ALTER TABLE `docente`
-  MODIFY `id_docente` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_docente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `parecer`
 --
@@ -199,7 +219,7 @@ ALTER TABLE `parecer`
 -- AUTO_INCREMENT for table `protocolo`
 --
 ALTER TABLE `protocolo`
-  MODIFY `id_protocolo` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_protocolo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 --
 -- Constraints for dumped tables
 --
@@ -211,14 +231,6 @@ ALTER TABLE `detalheprotocolo`
   ADD CONSTRAINT `FK_detalheprotocolo_animal` FOREIGN KEY (`id_animal`) REFERENCES `animal` (`id_animal`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `FK_detalheprotocolo_bioterio` FOREIGN KEY (`id_bioterio`) REFERENCES `bioterio` (`id_bioterio`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `FK_detalheprotocolo_protocolo` FOREIGN KEY (`id_protocolo`) REFERENCES `protocolo` (`id_protocolo`) ON DELETE NO ACTION ON UPDATE NO ACTION;
-
---
--- Limitadores para a tabela `protocolo`
---
-ALTER TABLE `protocolo`
-  ADD CONSTRAINT `FK_protocolo_status` FOREIGN KEY (`statusProtocolo`) REFERENCES `status` (`id_status`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `docente` FOREIGN KEY (`id_docente`) REFERENCES `docente` (`id_docente`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `parecer` FOREIGN KEY (`id_parecer`) REFERENCES `parecer` (`id_parecer`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
