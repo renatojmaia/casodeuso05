@@ -16,7 +16,7 @@ import br.com.controleAnimais.Protocolo;
 /**
  * Servlet implementation class Controller
  */
-@WebServlet("/CadastroProtocolo")
+@WebServlet("/Controller")
 public class Controller extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	@Resource(name="Protocolo")
@@ -57,7 +57,7 @@ public class Controller extends HttpServlet {
 		Protocolo p = new Protocolo(dataInicio, dataTermino, resumoIngles, resumoPt, justificativa, especie, qtdAnimal, bioterio);
 		
 		  
-		if(pro.cadastrarProtocolo(p)) {
+		if(!pro.cadastrarProtocolo(p)) {
 			request.getRequestDispatcher("cadastroSucesso.html").forward(request, response);
 		}else{
 			request.getRequestDispatcher("cadastrar.html").forward(request, response);
